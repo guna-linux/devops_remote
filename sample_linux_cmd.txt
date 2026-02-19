@@ -1,0 +1,27 @@
+tcpdump -c 10
+tcpdump -i etho
+tcpdump -i etho -v
+tcpdump tcp
+tcpdump host 192.168.5.10
+tcpdump port 80
+tcpdump -i etho -w sample_test.pcap
+tcpdump -r sample_test.pcap
+
+ufw status
+ufw enable
+ufw disable
+ufw allow all
+ufw allow ssh
+ufw allow 22
+ufw deny 80
+
+
+ip route
+route -n
+default via 192.168.5.100 dev etho 192.168.5.1/24 dev etho proto kernel scope link
+ip route add 10.54.90.0/24 via 192.168.5.100
+
+
+
+
+mtgrvguna@124
