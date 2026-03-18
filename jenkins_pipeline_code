@@ -1,0 +1,32 @@
+pipeline {
+    agent any
+
+    stages {
+
+        stage('Checkout from GitHub') {
+            steps {
+                git url: 'https://github.com/your/repo.git', branch: 'main'
+            }
+        }
+
+        stage('List Files') {
+            steps {
+                sh 'ls -alh'
+            }
+        }
+
+        stage('Docker Build') {
+            steps {
+                sh 'docker build -t imagename:tag .'
+            }
+        }
+
+        stage('Docker Run') {
+            steps {
+                sh 'docker run -d --name mycontainer imagename:tag'
+            }
+        }
+
+    }
+}
+``
