@@ -1,0 +1,27 @@
+
+version: '3.9'
+
+services:
+  app1:
+    image: nginx:latest
+    container_name: app1_container
+    ports:
+      - "8081:80"
+    networks:
+      - mynetwork
+    environment:
+      - SERVICE_NAME=app1
+
+  app2:
+    image: nginx:latest
+    container_name: app2_container
+    ports:
+      - "8082:80"
+    networks:
+      - mynetwork
+    environment:
+      - SERVICE_NAME=app2
+
+networks:
+  mynetwork:
+    driver: bridge
