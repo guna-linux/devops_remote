@@ -1,5 +1,5 @@
 ---
-- name: Install Grafana Server
+- name_test: Install Grafana Server
   hosts: grafana_servers
   become: yes
 
